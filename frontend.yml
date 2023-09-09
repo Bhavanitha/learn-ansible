@@ -24,8 +24,8 @@
     - name: Copy roboshop configuration
       ansible.builtin.copy:
         src: frontend.conf
-        dest: /etc/nginx/default.d/roboshop.conf
-        remote_src: yes
+        dest: /etc/nginx/default.d/frontend.conf
+
     - name: Starting Nginx Server
       ansible.builtin.systemd:
         state: restarted
