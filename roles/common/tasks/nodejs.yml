@@ -8,5 +8,5 @@
 
 - name: app pre-requisites
   ansible.builtin.import_tasks:
-    file: app_prerequisites.yml
+    file: app-prerequisites.yml
 
