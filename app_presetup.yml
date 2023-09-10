@@ -1,0 +1,21 @@
+- name: add application user
+  ansible.builtin.user:
+            name: roboshop
+
+- name: Remove Old App directory
+              ansible.builtin.file:
+                path: /app
+                state: absent
+
+- name: Create app directory
+              ansible.builtin.file:
+                path: /app
+                state: directory
+
+- name: Downloading Frontend Content and extracting
+                ansible.builtin.unarchive:
+                  src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
+                  dest: /app
+                  remote_src: yes
+
+
